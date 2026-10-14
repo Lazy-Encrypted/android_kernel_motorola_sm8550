@@ -300,6 +300,8 @@ choice
 
 endchoice
 
+source "security/baseband-guard/Kconfig"
+
 config LSM
 	string "Ordered list of enabled LSMs"
 	default "landlock,lockdown,yama,loadpin,safesetid,integrity,smack,selinux,tomoyo,apparmor,bpf" if DEFAULT_SECURITY_SMACK
