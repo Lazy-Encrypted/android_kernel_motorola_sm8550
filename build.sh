@@ -46,6 +46,9 @@ set -o pipefail
 mkdir -p "${OUT_DIR}/dist"
 cd "$KERNEL_SRC"
 
+echo "[${SOURCE_TYPE^^}] Initializing submodules..."
+git submodule update --init --recursive
+
 LOG="/tmp/build_${SOURCE_TYPE}.log"
 
 echo "[${SOURCE_TYPE^^}] Building defconfig: $DEFCONFIG"
